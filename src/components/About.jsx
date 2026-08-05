@@ -16,7 +16,7 @@ export default function About() {
           gap: '48px',
           alignItems: 'start'
         }}>
-          {/* Profile Photo / Visual Card */}
+          {/* Profile Photo Card */}
           <div style={{
             backgroundColor: 'var(--bg-card)',
             border: '1px solid var(--border)',
@@ -29,15 +29,21 @@ export default function About() {
               borderRadius: 'var(--radius-sm)',
               backgroundColor: 'var(--bg-secondary)',
               border: '1px solid var(--border)',
+              overflow: 'hidden',
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '24px',
-              color: 'var(--text-muted)'
+              marginBottom: '24px'
             }}>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '3.5rem', fontWeight: 800 }}>AA</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', marginTop: '8px' }}>PROFILE PHOTO PLACEHOLDER</span>
+              <img 
+                src="./images/profile.jpg" 
+                alt={personal.name}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.style.display = 'none';
+                }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
