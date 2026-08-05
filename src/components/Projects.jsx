@@ -80,19 +80,32 @@ export default function Projects() {
                 </a>
               </div>
 
-              {/* Visual Architecture Code Frame */}
+              {/* Visual Project Image or Code Frame Fallback */}
               <div style={{
                 backgroundColor: 'var(--bg-secondary)',
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-md)',
-                padding: '20px',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.8rem',
-                color: 'var(--accent)',
-                lineHeight: 1.6,
-                overflowX: 'auto'
+                overflow: 'hidden',
+                aspectRatio: '16 / 10',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
               }}>
-                <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{p.codeSnippet}</pre>
+                <img 
+                  src={`./images/projects/${p.id}.jpg`} 
+                  alt={p.title}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    const fallback = e.target.nextElementSibling;
+                    if (fallback) fallback.style.display = 'block';
+                  }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+
+                <div style={{ display: 'none', padding: '20px', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--accent)', lineHeight: 1.6, width: '100%' }}>
+                  <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{p.codeSnippet}</pre>
+                </div>
               </div>
             </article>
           ))}
