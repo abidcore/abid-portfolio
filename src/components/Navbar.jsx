@@ -47,13 +47,13 @@ export default function Navbar({ theme, toggleTheme }) {
         </a>
 
         {/* Desktop Links */}
-        <nav style={{ display: 'none', '@media (minWidth: 768px)': { display: 'block' } }}>
+        <nav style={{ display: 'none' }} className="desktop-nav">
           <ul style={{
             display: 'flex',
             gap: '32px',
             listStyle: 'none',
             alignItems: 'center'
-          }} className="desktop-menu">
+          }}>
             <li><a href="#about" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 600 }}>About</a></li>
             <li><a href="#skills" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 600 }}>Skills</a></li>
             <li><a href="#projects" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: 600 }}>Work</a></li>
@@ -124,7 +124,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <li><a href="#about" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>01. About</a></li>
             <li><a href="#skills" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>02. Skills</a></li>
-            <li><a href="#projects" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight 700 }}>03. Featured Work</a></li>
+            <li><a href="#projects" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>03. Featured Work</a></li>
             <li><a href="#education" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>04. Education</a></li>
             <li><a href="#contact" onClick={() => setMenuOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>05. Contact</a></li>
           </ul>
